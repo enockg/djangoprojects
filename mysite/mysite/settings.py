@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/djangoprojects/mysite/templates',],
+        'DIRS': ['C:/djangoprojects/mysite/templates/current_datetime.html',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
