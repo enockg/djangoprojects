@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from mysite0.views import hello, current_datetime
+from mysite.views import hello, current_datetime
 
 
 urlpatterns = patterns('',
