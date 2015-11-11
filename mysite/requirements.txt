@@ -1,4 +1,4 @@
-Django==1.8.5
+Django==1.7
 django-contrib-comments==1.6.1
 django-mptt==0.7.4
 django-scheduler==0.7.2
