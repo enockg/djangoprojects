@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello),
-    url(r'^time/$', current_datetime),
-    #url(r'^$', hello),
+    url(r'^$', current_datetime),
+    url(r'^$', hello),
 
     url(r'^admin/', include(admin.site.urls)),
 )
