@@ -1,6 +1,7 @@
 #################
 
 venv/
+junk/
 bin/
 # emacs backup files
 *~
