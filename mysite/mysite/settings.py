@@ -26,7 +26,7 @@ SECRET_KEY = '@xosuc(cno-7h043shot0lq%^hezml7zk_34ypmf&r1nr2kx7u'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SITE_ID = 1
 
 # Application definition
 
