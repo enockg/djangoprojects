@@ -25,6 +25,6 @@ urlpatterns = patterns('',
     url(r'^time/$', current_datetime),
     #url(r'^$', hello),
 	url(r'^weblog/', include('zinnia.urls')),
-	url(r'^comments/', include('django.contrib.comments.urls')),
+	#url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
