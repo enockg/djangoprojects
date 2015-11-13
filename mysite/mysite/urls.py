@@ -1,24 +1,47 @@
-from django.conf.urls import patterns, include, url
+"""Urls for the demo of Zinnia"""
+import os
+
 from django.contrib import admin
-from mysite.views import hello, current_datetime
+from django.conf.urls.defaults import url
+from django.conf.urls.defaults import include
+from django.conf.urls.defaults import patterns
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
 
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^mysite/', include('mysite.foo.urls')),
+admin.autodiscover()
+handler500 = 'django.views.defaults.server_error'
+handler404 = 'django.views.defaults.page_not_found'
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-    
-
+urlpatterns = patterns(
+    '',
+    (r'^$', 'django.views.generic.simple.redirect_to',
+     {'url': '/blog/'}),
+    url(r'^blog/', include('zinnia.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
-url(r'^comments/', include('django_comments.urls')),
-)
+    )
+
+sitemaps = {'tags': TagSitemap,
+            'blog': EntrySitemap,
+            'authors': AuthorSitemap,
+            'categories': CategorySitemap}
+
+urlpatterns += patterns('django.contrib.sitemaps.views',
+                        (r'^sitemap.xml$', 'index',
+                         {'sitemaps': sitemaps}),
+                        (r'^sitemap-(?P<section>.+)\.xml$', 'sitemap',
+                         {'sitemaps': sitemaps}),
+                        )
+
+urlpatterns += patterns('django.views.static',
+                        url(r'^zinnia/(?P<path>.*)$', 'serve',
+                            {'document_root': os.path.join(
+                                os.path.dirname(__file__),
+                                '..', 'zinnia', 'media', 'zinnia')}),
+                        )
