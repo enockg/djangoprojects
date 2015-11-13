@@ -1,30 +1,59 @@
-"""Urls for the demo of Zinnia"""
-import os
-
+from django.conf import settings
 from django.contrib import admin
 from django.conf.urls import url
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from mysite.views import hello, current_datetime
+from django.conf.urls import include
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'mysite0.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+from django.views.static import serve
+from django.views.defaults import bad_request
+from django.views.defaults import server_error
+from django.views.defaults import page_not_found
+from django.views.defaults import permission_denied
+from django.views.generic.base import RedirectView
+from django.contrib.sitemaps.views import index
+from django.contrib.sitemaps.views import sitemap
 
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^mysite/', include('mysite.foo.urls')),
+from django_xmlrpc.views import handle_xmlrpc
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', hello),
-    url(r'^time/$', current_datetime),
-    #url(r'^$', weblog),
-	url(r'^weblog/', include('zinnia.urls')),
-	#url(r'^comments/', include('django.contrib.comments.urls')),
+urlpatterns = [
+    url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
+    url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
+    url(r'^comments/', include('django_comments.urls')),
+    url(r'^xmlrpc/$', handle_xmlrpc),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
+
+sitemaps = {
+    'tags': TagSitemap,
+    'blog': EntrySitemap,
+    'authors': AuthorSitemap,
+    'categories': CategorySitemap
+}
+
+urlpatterns += [
+    url(r'^sitemap.xml$',
+        index,
+        {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$',
+        sitemap,
+        {'sitemaps': sitemaps}),
+]
+
+urlpatterns += [
+    url(r'^400/$', bad_request),
+    url(r'^403/$', permission_denied),
+    url(r'^404/$', page_not_found),
+    url(r'^500/$', server_error),
+]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve,
+            {'document_root': settings.MEDIA_ROOT})
+    ]
