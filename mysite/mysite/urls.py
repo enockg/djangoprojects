@@ -18,8 +18,8 @@ handler404 = 'django.views.defaults.page_not_found'
 urlpatterns = patterns(
     '',
     {'url': '/blog/'}),
-    url(r'^blog/', include('zinnia.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+      url(r'^blog/', include('zinnia.urls')),
+      url(r'^admin/', include(admin.site.urls)),
     )
 
 sitemaps = {'tags': TagSitemap,
