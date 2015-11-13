@@ -17,12 +17,8 @@ handler404 = 'django.views.defaults.page_not_found'
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'django.views.generic.simple.redirect_to',
      {'url': '/blog/'}),
     url(r'^blog/', include('zinnia.urls')),
-    url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     )
 
