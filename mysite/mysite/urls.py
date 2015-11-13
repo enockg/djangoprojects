@@ -3,40 +3,27 @@ import os
 
 from django.contrib import admin
 from django.conf.urls import url
-from django.conf.urls import include
-from django.conf.urls import patterns
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from mysite0.views import hello, current_datetime
 
-from zinnia.sitemaps import TagSitemap
-from zinnia.sitemaps import EntrySitemap
-from zinnia.sitemaps import CategorySitemap
-from zinnia.sitemaps import AuthorSitemap
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'mysite0.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
 
-admin.autodiscover()
-handler500 = 'django.views.defaults.server_error'
-handler404 = 'django.views.defaults.page_not_found'
+    # Examples:
+    # url(r'^$', 'mysite.views.home', name='home'),
+    # url(r'^mysite/', include('mysite.foo.urls')),
 
-urlpatterns = patterns(
-    '',
-    {'url': '/blog/'}),
-      url(r'^blog/', include('zinnia.urls')),
-      url(r'^admin/', include(admin.site.urls)),
-    )
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-sitemaps = {'tags': TagSitemap,
-            'blog': EntrySitemap,
-            'authors': AuthorSitemap,
-            'categories': CategorySitemap}
+    # Uncomment the next line to enable the admin:
+    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^hello/$', hello),
+    url(r'^time/$', current_datetime),
+    url(r'^$', hello),
 
-urlpatterns += patterns('django.contrib.sitemaps.views',
-                        (r'^sitemap.xml$', 'index',
-                         {'sitemaps': sitemaps}),
-                        (r'^sitemap-(?P<section>.+)\.xml$', 'sitemap',
-                         {'sitemaps': sitemaps}),
-                        )
-
-urlpatterns += patterns('django.views.static',
-                        url(r'^zinnia/(?P<path>.*)$', 'serve',
-                            {'document_root': os.path.join(
-                                os.path.dirname(__file__),
-                                '..', 'zinnia', 'media', 'zinnia')}),
-                        )
+    url(r'^admin/', include(admin.site.urls)),
+)
