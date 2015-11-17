@@ -1,0 +1,42 @@
+[
+{
+  "fields": {
+    "content_template": "zinnia/_entry_detail.html",
+    "detail_template": "entry_detail.html",
+    "start_publication": "2015-11-17T12:00:00Z",
+    "pingback_enabled": true,
+    "excerpt": "I got started with climbing about 3 years ago with Paradox Sports. They are an awesome organization that allows people with disabilities to experience getting off the ground through rock climbing. They also have other programs which you can see at their website www.paradoxsports.org . This past weekend I spent...",
+    "related": [
+      1
+    ],
+    "creation_date": "2015-11-17T12:00:00Z",
+    "featured": false,
+    "pingback_count": 0,
+    "trackback_count": 0,
+    "image_caption": "me in the gunks",
+    "lead": "I got started with climbing about 3 years ago with Paradox Sports.  They are an awesome organization that allows people with disabilities to experience getting off the ground through rock climbing.  They also have other programs which you can see at their website www.paradoxsports.org .",
+    "title": "Paradox Rocks The Gunks 2015",
+    "login_required": false,
+    "sites": [
+      5
+    ],
+    "last_update": "2015-11-17T17:50:56.253Z",
+    "content": "I got started with climbing about 3 years ago with Paradox Sports.  They are an awesome organization that allows people with disabilities to experience getting off the ground through rock climbing.  They also have other programs which you can see at their website www.paradoxsports.org .\r\n\r\nThis past weekend I spent my 3rd which I actually thought was my 4th weekend in the Gunks of New York with them.  I always love going to the Gunks because it is like seeing family every year.  They have become not just an organization but close friends who I talk to throughout the year and will hopefully be climbing with more this year in preparation for El Capitan attempt 2016.  It is also one of the most beautiful places I have ever been.  The mountains and trees make for a very scenic ride and there are multiple places to just stop and take it all in.\r\n\r\nEvery year the group becomes bigger and I make more friends to enjoy the outdoors with and share likeminded experiences through sports. We stay at Barb Treadway\u2019s house in tents on her lawn.  Without Barb the weekend would not be possible to afford to do.  She really is a super generous person and has become a great friend that I look forward to skiing with and climbing with more this year.\r\n\r\nIt really is pretty amazing to see the things that people can overcome in order to do the things they love.  It is also cool that no one in the group cares that everyone is overcoming something we are just friends hanging out and doing something fun.  We cheer each other on just like any group of athletes would who are achieving their goals they have set.  When you are up on the wall no one knows you have any disability you are then just another climber working your way to the top.\r\n\r\nI chose to work on my systems for my future ascent of El Capitan and try out some mechanical advantage ideas.  It was really helpful to be in a group of people that made it their sole purpose to help all the athletes out during the weekend.  I had Gary Dunn and Craig Muderlak coming up with ideas to try and Will Savage on belay. I also had my girlfriend Sandy there to take pictures for me. I am sure it wasn\u2019t easy to stand around and watch for 2 days. I am really glad she went and we got to spend that time together. They all really went out of their way to help me figure things out and in the end we actually decided for now at least that having no mechanical advantage and just doing straight pull ups is the most efficient method.  I am going to keep trying off and on when I am in the climbing gym or climbing with friends to see if we can figure out a good method but for now it appears we have exhausted the options.  I am hoping to try a new harness made my Petzl that is for rope access work that I think will make a huge difference.  I am also back in the gym doing pull up after pull up and lifting weights so I can be in the best shape possible for climbing and skiing.\r\n\r\n\r\n\r\n \r\n\r\nI also would like to recognize Nate McKenzie who volunteers his time to organize this entire event and puts countless hours into making it happen.  Without him we wouldn\u2019t have this amazing opportunity.\r\n\r\nI will hopefully be climbing with Nate and other friends again real soon and have more adventures to report.\r\n\r\nLinks of Interest:\r\n\r\nParadox Sports:  http://paradoxsports.org/\r\n\r\nShawagunk Mountains: http://www.nationalgeographic.com/adventure/0509/sports/rock_climbing.html",
+    "comment_count": 0,
+    "trackback_enabled": true,
+    "end_publication": null,
+    "image": "",
+    "status": 2,
+    "tags": "",
+    "authors": [
+      1
+    ],
+    "password": "",
+    "slug": "paradox-rocks-gunks-2015",
+    "categories": [],
+    "comment_enabled": true
+  },
+  "model": "zinnia.entry",
+  "pk": 1
+}
+]
