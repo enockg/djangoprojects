@@ -42,6 +42,7 @@ INSTALLED_APPS = (
   'mptt',
   'tagging',
   'zinnia',
+  'zinnia_wordpress',
 )
 
 MIDDLEWARE_CLASSES = (
