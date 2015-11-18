@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', include('zinnia.urls.entries')),
-	url(r'^path/to/blog/', include('wordpress.urls')),
+	
 ]
 
 sitemaps = {
