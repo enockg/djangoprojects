@@ -22,9 +22,9 @@ from zinnia.sitemaps import AuthorSitemap
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
+	url(r'^weblog/', include('zinnia.urls.entries')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^xmlrpc/$', handle_xmlrpc),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', include('zinnia.urls.entries')),
