@@ -253,7 +253,7 @@ table {
       font-size: 4em; } }
   @media (min-width: 1024px) {
     .zinnia #header h1 {
-      background: transparent url("../img/logo.png") no-repeat scroll left center;
+     /* background: transparent url("../img/logo.png") no-repeat scroll left center;*/
       padding-left: 1.5em; }
     .zinnia #header blockquote {
       margin-left: 6em; } }
