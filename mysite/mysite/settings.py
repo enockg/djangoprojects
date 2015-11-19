@@ -28,13 +28,17 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-	'zinnia',
+  'django.contrib.auth',
+  'django.contrib.admin',
+  'django.contrib.sites',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'django.contrib.contenttypes',
+  'django_comments',
+  'mptt',
+  'tagging',
+  'zinnia',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,19 +55,19 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
+  {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'APP_DIRS': True,
+    'OPTIONS': {
+      'context_processors': [
+        'django.contrib.auth.context_processors.auth',
+        'django.template.context_processors.i18n',
+        'django.template.context_processors.request',
+        'django.contrib.messages.context_processors.messages',
+        'zinnia.context_processors.version',  # Optional
+      ]
+    }
+  }
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
