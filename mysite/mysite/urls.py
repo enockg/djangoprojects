@@ -18,6 +18,7 @@ from zinnia.sitemaps import TagSitemap
 from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
