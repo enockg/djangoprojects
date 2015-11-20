@@ -1,12 +1,9 @@
-{% extends "zinnia/skeleton.html" %}
-{% load i18n %}
-{% load zinnia %}
-
-{% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock meta-keywords %}
-
-{% block meta %}
-    <meta name="generator" content="Zinnia {{ ZINNIA_VERSION }}" />
-{% endblock meta %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+</head>
 
 {% block link %}
     <link rel="index" href="{% url 'zinnia:entry_archive_index' %}" />
