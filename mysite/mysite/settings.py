@@ -63,7 +63,7 @@ TEMPLATES = [
   {
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
 	'DIRS': [
-            'C:\Users\Enock\Desktop\djangoprojects\mysite\templates\zinnia',
+            'C:\Users\Enock\Desktop\djangoprojects\mysite\templates\zinnia\base.html',
         ],
     'APP_DIRS': True,
     'OPTIONS': {
