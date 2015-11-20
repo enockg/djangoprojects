@@ -1,19 +1,18 @@
-{% load i18n %}
-{% load staticfiles %}
-<!doctype html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html xml:lang="en-us" lang="en-us" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Zinnia's Weblog</title>
+    <title>Enock's BLog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
     <meta name="robots" content="follow, all" />
+	 <meta name="language" content="en-us" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
-    <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
-    <meta name="author" content="Fantomas42" />
-    {% block meta %}{% endblock meta %}
+    <meta name="description" content="Latest entries" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Enock Glidden" />
+    <meta name="generator" content="Zinnia " />
     <link rel="pingback" href="/xmlrpc/" />
-    <link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
-    <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
+    <link rel="shortcut icon" href="/static/zinnia/img/favicon.ico" />
+    <link rel="home" href="http://enocktest.herokuapp.com/blog/" />
     <link rel="stylesheet" type="text/css" media="screen, projection" href="C:\Users\Enock\Desktop\djangoprojects\mysite\static\zinnia\theme\css\screen.css" />
     <link rel="stylesheet" type="text/css" media="print" href="C:\Users\Enock\Desktop\djangoprojects\mysite\static\zinnia\theme\css\print.css" />
     <!--[if lt IE 8]>
