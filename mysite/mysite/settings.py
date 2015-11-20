@@ -125,3 +125,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+STATIC_ROOT = "C:\Users\Enock\Desktop\djangoprojects\mysite\static\zinnia\theme\css"
