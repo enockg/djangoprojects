@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
-	url(r'^weblog/', include('zinnia.urls.entries')),
+	url(r'^blog/', include('zinnia.urls.entries')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^xmlrpc/$', handle_xmlrpc),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

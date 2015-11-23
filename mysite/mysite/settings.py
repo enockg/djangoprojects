@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -62,10 +62,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
   {
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-	'DIRS': [
-            'C:\Users\Enock\Desktop\djangoprojects\mysite\templates\zinnia\base.html',
-        ],
     'APP_DIRS': True,
+	'DIRS': ('DIRS': [os.path.join(BASE_DIR, 'templates')],)
     'OPTIONS': {
       'context_processors': [
         'django.contrib.auth.context_processors.auth',
@@ -128,4 +126,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = "C:\Users\Enock\Desktop\djangoprojects\mysite\static\zinnia\theme\css"
